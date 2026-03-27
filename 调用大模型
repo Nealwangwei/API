@@ -1,0 +1,10 @@
+import ollama
+client = ollama.Client('http://127.0.0.1:11434/')
+result = client.chat(
+    model='qwen3.5:0.8b',
+    message=[
+        {'role': 'user', 'content': '你是谁'}
+    ],
+    stream=False
+)
+print(result.message.content)
